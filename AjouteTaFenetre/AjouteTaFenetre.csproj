@@ -46,11 +46,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="5boutons.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="5boutons.Designer.cs">
+      <DependentUpon>5boutons.cs</DependentUpon>
     </Compile>
     <Compile Include="LateAndAngry.cs">
       <SubType>Form</SubType>
@@ -66,8 +66,8 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="5boutons.resx">
+      <DependentUpon>5boutons.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LateAndAngry.resx">
       <DependentUpon>LateAndAngry.cs</DependentUpon>
