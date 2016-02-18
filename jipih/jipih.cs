@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace jipih
 {
-    public partial class Form1 : Form
+    public partial class jipih : Form
     {
-        public Form1()
+        public jipih()
         {
             InitializeComponent();
         }

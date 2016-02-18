@@ -1,6 +1,6 @@
 ﻿namespace jipih
 {
-    partial class Form1
+    partial class jipih
     {
         /// <summary>
         /// Variable nécessaire au concepteur.
