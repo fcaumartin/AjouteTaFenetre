@@ -58,6 +58,12 @@
     <Compile Include="LateAndAngry.Designer.cs">
       <DependentUpon>LateAndAngry.cs</DependentUpon>
     </Compile>
+    <Compile Include="Olivier.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Olivier.Designer.cs">
+      <DependentUpon>Olivier.cs</DependentUpon>
+    </Compile>
     <Compile Include="Principale.cs">
       <SubType>Form</SubType>
     </Compile>
