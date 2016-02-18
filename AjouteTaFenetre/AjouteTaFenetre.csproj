@@ -52,6 +52,12 @@
     <Compile Include="5boutons.Designer.cs">
       <DependentUpon>5boutons.cs</DependentUpon>
     </Compile>
+    <Compile Include="Dovah.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dovah.Designer.cs">
+      <DependentUpon>Dovah.cs</DependentUpon>
+    </Compile>
     <Compile Include="LateAndAngry.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -75,6 +81,9 @@
     <EmbeddedResource Include="5boutons.resx">
       <DependentUpon>5boutons.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Dovah.resx">
+      <DependentUpon>Dovah.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="LateAndAngry.resx">
       <DependentUpon>LateAndAngry.cs</DependentUpon>
     </EmbeddedResource>
@@ -89,6 +98,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -121,6 +131,30 @@
       <Isolated>False</Isolated>
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="6.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="7.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="8.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
