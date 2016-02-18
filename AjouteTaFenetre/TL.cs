@@ -16,5 +16,25 @@ namespace AjouteTaFenetre
         {
             InitializeComponent();
         }
+        private void button3_MouseEnter(object sender, EventArgs e)
+        {
+            button3.Hide();
+            button1.Show();
+            button2.Show();
+        }
+
+        private void button2_MouseEnter(object sender, EventArgs e)
+        {
+            button2.Hide();
+            button1.Show();
+            button3.Show();
+        }
+
+        private void button1_MouseEnter(object sender, EventArgs e)
+        {
+            button1.Hide();
+            button2.Show();
+            button3.Show();
+        }
     }
 }
