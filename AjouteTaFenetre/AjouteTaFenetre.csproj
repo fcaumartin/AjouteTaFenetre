@@ -52,6 +52,12 @@
     <Compile Include="5boutons.Designer.cs">
       <DependentUpon>5boutons.cs</DependentUpon>
     </Compile>
+    <Compile Include="DuDe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DuDe.Designer.cs">
+      <DependentUpon>DuDe.cs</DependentUpon>
+    </Compile>
     <Compile Include="Jipih.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -86,6 +92,9 @@
     </Compile>
     <EmbeddedResource Include="5boutons.resx">
       <DependentUpon>5boutons.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DuDe.resx">
+      <DependentUpon>DuDe.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Jipih.resx">
       <DependentUpon>Jipih.cs</DependentUpon>
