@@ -33,7 +33,7 @@ namespace AjouteTaFenetre
                 label4.Visible = true;
                 label4.ForeColor = Color.HotPink;
                 label4.Font = new Font(label4.Font, FontStyle.Bold);
-                label4.Text = "Mot de passe COCHON... HMMMM !!!! COQUINOU !!!!";
+                label4.Text = "Mot de passe COCHON... \nHMMMM !!!! COQUINOU !!!!";
             }
             else
             {
