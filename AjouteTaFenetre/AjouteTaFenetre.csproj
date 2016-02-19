@@ -52,6 +52,12 @@
     <Compile Include="5boutons.Designer.cs">
       <DependentUpon>5boutons.cs</DependentUpon>
     </Compile>
+    <Compile Include="AlexForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AlexForm.Designer.cs">
+      <DependentUpon>AlexForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Dovah.cs">
       <SubType>Form</SubType>
     </Compile>
