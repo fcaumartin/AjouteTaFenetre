@@ -52,6 +52,18 @@
     <Compile Include="5boutons.Designer.cs">
       <DependentUpon>5boutons.cs</DependentUpon>
     </Compile>
+    <Compile Include="AlexForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AlexForm.Designer.cs">
+      <DependentUpon>AlexForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dovah.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dovah.Designer.cs">
+      <DependentUpon>Dovah.cs</DependentUpon>
+    </Compile>
     <Compile Include="DuDe.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -96,6 +108,9 @@
     <EmbeddedResource Include="DuDe.resx">
       <DependentUpon>DuDe.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Dovah.resx">
+      <DependentUpon>Dovah.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Jipih.resx">
       <DependentUpon>Jipih.cs</DependentUpon>
     </EmbeddedResource>
@@ -113,6 +128,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="TL.resx">
       <DependentUpon>TL.cs</DependentUpon>
@@ -148,6 +164,30 @@
       <Isolated>False</Isolated>
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="6.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="7.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="8.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

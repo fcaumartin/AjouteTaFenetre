@@ -33,7 +33,7 @@ namespace AjouteTaFenetre
                 label4.Visible = true;
                 label4.ForeColor = Color.HotPink;
                 label4.Font = new Font(label4.Font, FontStyle.Bold);
-                label4.Text = "Mot de passe \nCOCHON... \nHMMMM !!!!\nCOQUINOU !!!!";
+                label4.Text = "Mot de passe COCHON... HMMMM !!!! COQUINOU !!!!";
             }
             else
             {
@@ -53,17 +53,30 @@ namespace AjouteTaFenetre
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (comboBox1.Text == "Moi")
+            if (comboBox1.Text == "Jipih" || comboBox1.Text == "Arshess" || comboBox1.Text == "AsThom" || comboBox1.Text == "Dovah" || comboBox1.Text == "Supa" || comboBox1.Text == "Who")
             {
                 label5.Visible = true;
                 label5.ForeColor = Color.HotPink;
                 label5.Font = new Font(label4.Font, FontStyle.Bold);
-                label5.Text = "Bah alors \ntu viens plus \naux soirées !!!!";
+                label5.Text = "Bah alors tu viens plus aux soirées !!!!";
             }
-            else
+           
+
+            if (comboBox1.Text == "François" || comboBox1.Text == "DuDe")
+            {
+                label5.Visible = true;
+                label5.ForeColor = Color.DarkBlue;
+                label5.Font = new Font(label4.Font, FontStyle.Bold);
+                label5.Text = "Tiens vlà le meilleur !!!!";
+            }
+
+            if (comboBox1.Text.Length == 0)
             {
                 label5.Visible = false;
             }
+           
+
+            
         }
     }
 }
