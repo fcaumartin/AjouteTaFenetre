@@ -23,7 +23,6 @@ namespace AjouteTaFenetre
 
             bool a = Regex.IsMatch(tb_lettre.Text, @"^[ACEFGHIJKLMPQSTVWXYZacefghijklmpqstvwxyz]$");
             LTAP.Visible = true;
-
             if (tb_lettre.Text != "")
             {
 
@@ -103,12 +102,37 @@ namespace AjouteTaFenetre
                         case 8:
                             PB.Image = Properties.Resources._8;
                             LTAP.Text = LTAP.Text + "\n" + tb_lettre.Text + " ";
+                            DialogResult res2 = MessageBox.Show("Perdu !!!!\nTu es nul à ch..\nAllez ADÉÉÉÉÉ", "GROS NAZE !", MessageBoxButtons.OK);
+                            if (res2 == DialogResult.OK)
+                            {
+                                Application.Exit();
+                            }
+
                             i++;
                             break;
                     }
                 }
             }
+
+            if (PB.Image == Properties.Resources._8)
+            {
+                MessageBox.Show("Perdu !!!!/nTu es nul à..../nAllez ADÉÉÉÉÉ", "GROS NAZE !");
+                Application.Exit();
+            }
+
             tb_lettre.Text = "";
+            tb_lettre.Focus();
+            if (l1.Text == "B" && l2.Text == "o" && l3.Text == "n" && l4.Text == "d" && l5.Text == "o" && l6.Text == "u" && l7.Text == "r")
+            {
+                DialogResult res = MessageBox.Show(" C'est fini ! Allez ADÉ !!! ", "BRAVOOOOOOOOO", MessageBoxButtons.OK);
+
+                if (res == DialogResult.OK)
+                {
+                    Application.Exit();
+                }
+
+            }
+
         }
     }
 }
