@@ -64,6 +64,12 @@
     <Compile Include="Dovah.Designer.cs">
       <DependentUpon>Dovah.cs</DependentUpon>
     </Compile>
+    <Compile Include="DuDe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DuDe.Designer.cs">
+      <DependentUpon>DuDe.cs</DependentUpon>
+    </Compile>
     <Compile Include="Jipih.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -104,6 +110,9 @@
     </Compile>
     <EmbeddedResource Include="5boutons.resx">
       <DependentUpon>5boutons.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DuDe.resx">
+      <DependentUpon>DuDe.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Dovah.resx">
       <DependentUpon>Dovah.cs</DependentUpon>
