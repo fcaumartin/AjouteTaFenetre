@@ -70,6 +70,12 @@
     <Compile Include="DuDe.Designer.cs">
       <DependentUpon>DuDe.cs</DependentUpon>
     </Compile>
+    <Compile Include="StellioDeath.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StellioDeath.Designer.cs">
+      <DependentUpon>StellioDeath.cs</DependentUpon>
+    </Compile>
     <Compile Include="Jipih.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -122,6 +128,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Dovah.resx">
       <DependentUpon>Dovah.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StellioDeath.resx">
+      <DependentUpon>StellioDeath.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Jipih.resx">
       <DependentUpon>Jipih.cs</DependentUpon>
