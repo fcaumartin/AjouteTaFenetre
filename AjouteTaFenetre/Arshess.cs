@@ -13,7 +13,7 @@ namespace AjouteTaFenetre
 {
     public partial class Arshess : Form
     {
-        int nbr_mine = 0, x = 0, y = 0, bomba = 0;
+        int nbr_mine = 0, x = 0, y = 0, bomba = 0, desamorce=0;
         // matrice de 9 sur 9
         string[,] carte = new string[10, 10];
         bool loose = false;
@@ -29,7 +29,7 @@ namespace AjouteTaFenetre
                     Button bt = new Button();
                     bt.Name = "bt-" + x + "-" + y;
                     bt.Tag = 10 * y + x;
-                    bt.Click += Bt_Click;
+                    bt.MouseDown += Bt_Click;
                     table1.Controls.Add(bt, x, y);
                 }
             table1.CellBorderStyle = TableLayoutPanelCellBorderStyle.Single;
@@ -40,91 +40,93 @@ namespace AjouteTaFenetre
             table1.Enabled = false;
         }
 
-        private void Bt_Click(object sender, EventArgs e)
+        private void Bt_Click(object sender, MouseEventArgs e)
         {
             Button bt = sender as Button;
-           string[] test = bt.Name.Split('-');
+            string[] test = bt.Name.Split('-');
             int xx = Convert.ToInt32(test[1]);
             int yy = Convert.ToInt32(test[2]);
-
-            Console.WriteLine("{0} {1}", test[1], test[2]);
-
-            if (carte[xx,yy] == "X")
+            if (e.Button == MouseButtons.Left)
             {
-                MessageBox.Show("et hop, une jambe de moins", "Perdu");
-                table1.Enabled = false;
-                btn_fire.Enabled = true;
-                label2.Visible = true;
-                bt.Text = "X";
-                loose = true;
+                //Console.WriteLine("{0} {1}", test[1], test[2]);
+                if (carte[xx, yy] == "X")
+                {
+                    MessageBox.Show("et hop, une jambe de moins", "Perdu");
+                    table1.Enabled = false;
+                    btn_fire.Enabled = true;
+                    label2.Visible = true;
+                    bt.Text = "X";
+                    loose = true;
+                }
+                else
+                {
+                    // les verticales ou l'inverse j'ai un doute
+                    if (xx != 9)
+                    {
+                        if (carte[xx + 1, yy] == "X")
+                            bomba++;
+                    }
+                    if (xx != 0)
+                    {
+                        if (carte[xx - 1, yy] == "X")
+                            bomba++;
+                    }
+                    // les horizontales  ou l'inverse j'ai un doute
+
+                    if (yy != 9)
+                    {
+                        if (carte[xx, yy + 1] == "X")
+                            bomba++;
+                    }
+                    if (yy != 0)
+                    {
+                        if (carte[xx, yy - 1] == "X")
+                            bomba++;
+                    }
+                    //les diagonales
+                    if (xx != 9 && yy != 9)
+                    {
+                        if (carte[xx + 1, yy + 1] == "X")
+                            bomba++;
+                    }
+                    if (xx != 0 && yy != 0)
+                    {
+                        if (carte[xx - 1, yy - 1] == "X")
+                            bomba++;
+                    }
+                    if (xx != 9 && yy != 0)
+                    {
+                        if (carte[xx + 1, yy - 1] == "X")
+                            bomba++;
+                    }
+                    if (xx != 0 && yy != 9)
+                    {
+                        if (carte[xx - 1, yy + 1] == "X")
+                            bomba++;
+                    }
+                    bt.Text = Convert.ToString(bomba);
+                    bomba = 0;
+                }
             }
-            else
+            else if (e.Button == MouseButtons.Right)
             {
-                // les verticales ou l'inverse j'ai un doute
-                if (xx != 9)
+                if (carte[xx, yy] == "X")
                 {
-                    if (carte[xx + 1, yy] == "X")
-                        bomba++;
+                    bt.Text = "O";
+                    desamorce++;
                 }
-                if (xx != 0)
+                else
                 {
-                    if (carte[xx - 1, yy] == "X")
-                        bomba++;
+                    bt.Text = "O";
                 }
-                // les horizontales  ou l'inverse j'ai un doute
+                if (desamorce == nbr_mine)
+                {
+                    label2.Text = "You are Winner ";
+                    label2.Visible = true;
+                }
 
-                if (yy != 9)
-                {
-                    if (carte[xx,yy+1] == "X")
-                        bomba++;
-                }
-                if (yy != 0)
-                {
-                    if (carte[xx, yy-1] == "X")
-                        bomba++;
-                }
-                //les diagonales
-                if (xx != 9 && yy != 9)
-                {
-                    if (carte[xx + 1, yy + 1] == "X")
-                        bomba++;
-                }
-                if (xx != 0 && yy != 0)
-                {
-                    if (carte[xx - 1, yy - 1] == "X")
-                        bomba++;
-                }
-                if (xx != 9 && yy != 0)
-                {
-                    if (carte[xx + 1, yy - 1] == "X")
-                        bomba++;
-                }
-                if (xx != 0 && yy != 9)
-                {
-                    if (carte[xx - 1, yy + 1] == "X")
-                        bomba++;
-                }
-                bt.Text = Convert.ToString(bomba);
-                bomba = 0;
             }
         }
-        private void Panel3_Paint(object sender, PaintEventArgs e)
-        {
-            //Graphics g = e.Graphics;
-            //float h = (panel3.Height-1) / 10f;
-            //float w = (panel3.Width-1) / 10f;
-            //for (int i = 0; i <= 10; i++)
-            //{
-            //    g.DrawLine(Pens.Black, 0, h * i, panel3.Width - 1, h * i);
-            //    g.DrawLine(Pens.Black, w * i, 0, w * i, panel3.Height - 1);
-            //}   
-        }
-
-        private void panel3_MouseMove(object sender, MouseEventArgs e)
-        {
-           // Console.WriteLine(e.X/20 + " " + e.Y/20);
-        }
-
         private void placement()
         {
             Random pos = new Random();
