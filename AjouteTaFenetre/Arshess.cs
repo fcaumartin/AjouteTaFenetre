@@ -16,23 +16,27 @@ namespace AjouteTaFenetre
         int nbr_mine = 0, x = 0, y = 0, bomba = 0;
         // matrice de 9 sur 9
         string[,] carte = new string[10, 10];
+        bool loose = false;
         public Arshess()
         {
             InitializeComponent();
         }
-
-        private void Arshess_Load(object sender, EventArgs e)
+        private void gengrille()
         {
             for (int x = 0; x < 10; x++)
                 for (int y = 0; y < 10; y++)
                 {
                     Button bt = new Button();
-                    bt.Name = "bt-" + x +"-"+ y;
-                    bt.Tag = 10*y + x;
+                    bt.Name = "bt-" + x + "-" + y;
+                    bt.Tag = 10 * y + x;
                     bt.Click += Bt_Click;
                     table1.Controls.Add(bt, x, y);
                 }
             table1.CellBorderStyle = TableLayoutPanelCellBorderStyle.Single;
+        }
+        private void Arshess_Load(object sender, EventArgs e)
+        {
+            gengrille();
             table1.Enabled = false;
         }
 
@@ -52,6 +56,7 @@ namespace AjouteTaFenetre
                 btn_fire.Enabled = true;
                 label2.Visible = true;
                 bt.Text = "X";
+                loose = true;
             }
             else
             {
@@ -145,6 +150,11 @@ namespace AjouteTaFenetre
                 placement();
                 btn_fire.Enabled = false;
                 table1.Enabled = true;
+                if (loose)
+                {
+                    table1.Controls.Clear();
+                    gengrille();
+                }
             }
         }
 
