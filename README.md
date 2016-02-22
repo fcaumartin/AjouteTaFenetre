@@ -1,15 +1,14 @@
-# Travailler à plusieurs sur le même projet ?
+# Travailler Ã  plusieurs sur le mÃªme projet ?
 
-## Cloner le dépôt
+## Cloner le dï¿½pï¿½t
 ```
 git clone https://github.com/fcaumartin/AjouteTaFenetre.git
 ```
-## Ajouter un formulaire personnalisé
-## Testez le résultat
+## Ajouter un formulaire personnalisï¿½
+## Testez le rï¿½sultat
 ## Effectuez un commit puis publier la solution 
 ```
 git commit
 git push origin master
 ```
-## Partagez avec vos collègues
- 
+## Partagez avec vos collï¿½gues
