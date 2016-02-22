@@ -17,26 +17,28 @@ namespace AjouteTaFenetre
             InitializeComponent();
         }
 
-        private void button2_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show("Ne soyez pas si négatif je suis sûre que vous faites de votre mieux");
-        }
-
         private void button1_MouseEnter(object sender, EventArgs e)
         {
             button1.Text = "Non";
             button2.Text = "Oui";
+            pictureBox1.Visible = true;
         }
 
         private void button1_MouseLeave(object sender, EventArgs e)
         {
-            button1.Text = "Oui";
             button2.Text = "Non";
+            button1.Text = "Oui";
+            pictureBox1.Visible = false;
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Ne soyez pas si négatif je suis sûre que vous faites de votre mieux");
+            MessageBox.Show("Ne soyez pas si négatif, je suis sûre que vous faites de votre mieux");
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Ne soyez pas si négatif, je suis sûre que vous faites de votre mieux");
         }
     }
 }
