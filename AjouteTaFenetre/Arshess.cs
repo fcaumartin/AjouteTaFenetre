@@ -28,7 +28,6 @@ namespace AjouteTaFenetre
                 {
                     Button bt = new Button();
                     bt.Name = "bt-" + x + "-" + y;
-                    //bt.Tag = 10 * y + x;
                     bt.MouseDown += Bt_Click;
                     table1.Controls.Add(bt, x, y);
                 }
@@ -48,16 +47,17 @@ namespace AjouteTaFenetre
             //---------------------------------------------------
             //on affiche un X sur chaque bombe de la map
             //---------------------------------------------------
-            // Button b;
-            //for (int x = 0; x < 10; x++)
-            //    for (int y = 0; y < 10; y++)
-            //    {
-            //        if (carte[x,y] == "X")
-            //        {
-            //            b = (Button)this.Controls["bt" + "-" + x + "-" + y];
-            //            b.Text = "X";
-            //        }
-            //    }
+            Button b;
+            for (int x = 0; x < 10; x++)
+                for (int y = 0; y < 10; y++)
+                {
+                    if (carte[x, y] == "X")
+                    {
+                        b = table1.GetControlFromPosition(x, y) as Button;
+                        b.Text = "X";
+                    }
+                }           
+            
         }
         private void Arshess_Load(object sender, EventArgs e)
         {
@@ -103,7 +103,7 @@ namespace AjouteTaFenetre
                         if (carte[xx, yy - 1] == "X")
                             bomba++;
                     }
-                    //les diagonales
+                    //les diagonales, ça c'est sûr
                     if (xx != 9 && yy != 9)
                     {
                         if (carte[xx + 1, yy + 1] == "X")
@@ -124,14 +124,13 @@ namespace AjouteTaFenetre
                         if (carte[xx - 1, yy + 1] == "X")
                             bomba++;
                     }
-                    // bt.Text = Convert.ToString(bomba);
                     bt.Text = bomba.ToString();
                     bomba = 0;
                 }
             }
             else if (e.Button == MouseButtons.Right)
             {
-                if (bt.Text == "O")
+                if (bt.Text == "M")
                 {
                     bt.Text = "";
                     antminerestante++;
@@ -140,13 +139,13 @@ namespace AjouteTaFenetre
                 {
                     if (carte[xx, yy] == "X" && antminerestante > 0)
                     {
-                        bt.Text = "O";
+                        bt.Text = "M";
                         desamorce++;
                         antminerestante--;
                     }
                     else
                     {
-                        bt.Text = "O";
+                        bt.Text = "M";
                         antminerestante--;
                     }
 
@@ -156,9 +155,9 @@ namespace AjouteTaFenetre
                         label2.Visible = true;
                         table1.Enabled = false;
                         btn_fire.Enabled = true;
+                        loose = true;
                     }
                 }
-                //lb_nb_bombe.Text = Convert.ToString(antminerestante);
                 lb_nb_bombe.Text = antminerestante.ToString();
             }
         }
