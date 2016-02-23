@@ -34,6 +34,8 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.table1 = new System.Windows.Forms.TableLayoutPanel();
             this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.lb_nb_bombe = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -117,12 +119,34 @@
             this.label2.Text = "Bien joué, tu retentes ? ";
             this.label2.Visible = false;
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(365, 140);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(91, 13);
+            this.label3.TabIndex = 10;
+            this.label3.Text = "bombes restante :";
+            this.label3.Visible = false;
+            // 
+            // lb_nb_bombe
+            // 
+            this.lb_nb_bombe.AutoSize = true;
+            this.lb_nb_bombe.Location = new System.Drawing.Point(462, 140);
+            this.lb_nb_bombe.Name = "lb_nb_bombe";
+            this.lb_nb_bombe.Size = new System.Drawing.Size(19, 13);
+            this.lb_nb_bombe.TabIndex = 11;
+            this.lb_nb_bombe.Text = "10";
+            this.lb_nb_bombe.Visible = false;
+            // 
             // Arshess
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(500, 311);
+            this.Controls.Add(this.lb_nb_bombe);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.table1);
             this.Controls.Add(this.panel1);
@@ -144,5 +168,7 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.TableLayoutPanel table1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lb_nb_bombe;
     }
 }

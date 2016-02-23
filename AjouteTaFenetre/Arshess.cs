@@ -13,7 +13,7 @@ namespace AjouteTaFenetre
 {
     public partial class Arshess : Form
     {
-        int nbr_mine = 0, x = 0, y = 0, bomba = 0, desamorce=0;
+        int nbr_mine = 0, x = 0, y = 0, bomba = 0, desamorce=0, antminerestante=0;
         // matrice de 9 sur 9
         string[,] carte = new string[10, 10];
         bool loose = false;
@@ -28,11 +28,36 @@ namespace AjouteTaFenetre
                 {
                     Button bt = new Button();
                     bt.Name = "bt-" + x + "-" + y;
-                    bt.Tag = 10 * y + x;
+                    //bt.Tag = 10 * y + x;
                     bt.MouseDown += Bt_Click;
                     table1.Controls.Add(bt, x, y);
                 }
             table1.CellBorderStyle = TableLayoutPanelCellBorderStyle.Single;
+        }
+
+        private void perdu(object sender)
+        {
+            Button bt = sender as Button;
+            MessageBox.Show("et hop, une jambe de moins", "Perdu");
+            table1.Enabled = false;
+            btn_fire.Enabled = true;
+            label2.Visible = true;
+            bt.Text = "X";
+            loose = true;
+
+            //---------------------------------------------------
+            //on affiche un X sur chaque bombe de la map
+            //---------------------------------------------------
+            // Button b;
+            //for (int x = 0; x < 10; x++)
+            //    for (int y = 0; y < 10; y++)
+            //    {
+            //        if (carte[x,y] == "X")
+            //        {
+            //            b = (Button)this.Controls["bt" + "-" + x + "-" + y];
+            //            b.Text = "X";
+            //        }
+            //    }
         }
         private void Arshess_Load(object sender, EventArgs e)
         {
@@ -50,13 +75,8 @@ namespace AjouteTaFenetre
             {
                 //Console.WriteLine("{0} {1}", test[1], test[2]);
                 if (carte[xx, yy] == "X")
-                {
-                    MessageBox.Show("et hop, une jambe de moins", "Perdu");
-                    table1.Enabled = false;
-                    btn_fire.Enabled = true;
-                    label2.Visible = true;
-                    bt.Text = "X";
-                    loose = true;
+                { 
+                    perdu(sender);
                 }
                 else
                 {
@@ -104,27 +124,42 @@ namespace AjouteTaFenetre
                         if (carte[xx - 1, yy + 1] == "X")
                             bomba++;
                     }
-                    bt.Text = Convert.ToString(bomba);
+                    // bt.Text = Convert.ToString(bomba);
+                    bt.Text = bomba.ToString();
                     bomba = 0;
                 }
             }
             else if (e.Button == MouseButtons.Right)
             {
-                if (carte[xx, yy] == "X")
+                if (bt.Text == "O")
                 {
-                    bt.Text = "O";
-                    desamorce++;
+                    bt.Text = "";
+                    antminerestante++;
                 }
                 else
                 {
-                    bt.Text = "O";
-                }
-                if (desamorce == nbr_mine)
-                {
-                    label2.Text = "You are Winner ";
-                    label2.Visible = true;
-                }
+                    if (carte[xx, yy] == "X" && antminerestante > 0)
+                    {
+                        bt.Text = "O";
+                        desamorce++;
+                        antminerestante--;
+                    }
+                    else
+                    {
+                        bt.Text = "O";
+                        antminerestante--;
+                    }
 
+                    if (desamorce == nbr_mine)
+                    {
+                        label2.Text = "You are Winner ";
+                        label2.Visible = true;
+                        table1.Enabled = false;
+                        btn_fire.Enabled = true;
+                    }
+                }
+                //lb_nb_bombe.Text = Convert.ToString(antminerestante);
+                lb_nb_bombe.Text = antminerestante.ToString();
             }
         }
         private void placement()
@@ -139,7 +174,7 @@ namespace AjouteTaFenetre
                 } while (carte[x, y] == "X");
 
                 carte[x, y] = "X";
-                Console.WriteLine("x = {0} y = {1}",x,y);
+                //Console.WriteLine("x = {0} y = {1}",x,y);
             }
         }
 
@@ -157,6 +192,10 @@ namespace AjouteTaFenetre
                     table1.Controls.Clear();
                     gengrille();
                 }
+                antminerestante = nbr_mine;
+                lb_nb_bombe.Visible = true;
+                label3.Visible = true;
+                lb_nb_bombe.Text = Tb_nbr_mine.Text;
             }
         }
 
