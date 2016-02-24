@@ -126,6 +126,12 @@
     <Compile Include="TL.Designer.cs">
       <DependentUpon>TL.cs</DependentUpon>
     </Compile>
+    <Compile Include="yoyo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="yoyo.Designer.cs">
+      <DependentUpon>yoyo.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="5boutons.resx">
       <DependentUpon>5boutons.cs</DependentUpon>
     </EmbeddedResource>
@@ -168,6 +174,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="TL.resx">
       <DependentUpon>TL.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="yoyo.resx">
+      <DependentUpon>yoyo.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -224,6 +233,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="8.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\print\print.csproj">
+      <Project>{fa5ee9d7-e295-4307-8aa9-0c71eb1d3ba2}</Project>
+      <Name>print</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
